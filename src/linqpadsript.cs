@@ -20,3 +20,6 @@ var distr = new MathNet.Numerics.Distributions.ContinuousUniform(0.0, 1.0);
 			var randv2 = noMeaning.Random(1, 2000, distr).RowI(1);
 			t = p.RowI(1) + 0.3 * p.RowI(2) + 0.28 * randv2 + p.RowI(7);
 
+			Regression rega = new Regression(p,t);
+			rega.bestsubsets(4,0);
+			
